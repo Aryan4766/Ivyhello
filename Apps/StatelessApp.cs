@@ -53,7 +53,19 @@ public class StatelessApp : ViewBase
 					{
 						stateMachine.Fire(Trigger.Emergency);
 					}
-				}).Disabled(!canEmergency);
+				}).Disabled(!canEmergency)
+				| new Button("Reset to Red", onClick: () =>
+				{
+					// Force back to Red using the reentry trigger when possible, otherwise set state
+					if (stateMachine.CanFire(Trigger.Emergency))
+					{
+						stateMachine.Fire(Trigger.Emergency);
+					}
+					else
+					{
+						machineState.Value = TrafficLightState.Red;
+					}
+				});
 		}
 
 		object Diagram() => Layout.Vertical().Gap(1)

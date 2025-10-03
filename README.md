@@ -34,3 +34,10 @@ ivy deploy
 This project includes a demo app using the Stateless state machine (Issue: `https://github.com/Ivy-Interactive/Ivy-Examples/issues/179`).
 
 Open the "Stateless" tab in the running app to interact with a simple traffic light modeled with Stateless triggers and states.
+
+### Submit to Ivy-Examples
+
+1. Fork `https://github.com/Ivy-Interactive/Ivy-Examples`.
+2. Add a new folder `stateless/` with this app's relevant files and a `README.md`.
+3. Open a PR referencing Issue `#179` and include run instructions.
+4. Fill the feedback form linked in the issue.
